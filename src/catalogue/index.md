@@ -14,141 +14,117 @@ demo:
 
 ## 示例
 
+### Catalogue.Tree
+
 ```jsx
 import React from 'react';
 import { Divider, Row, Col } from 'antd';
 
-import {
-    DefaultTree,
-    NoHeaderTree,
-    WithBtnSlotTree,
-    WithTabsTree,
-    SmallTree,
-    WithCheckboxTree,
-} from './demos/tree';
-import { NormalTreeSelect } from './demos/treeSelect';
+import { DefaultTree } from './demos/tree/DefaultTree';
 
 export default () => {
     return (
         <div style={{ background: '#eee', padding: 20 }}>
             <h1>DefaultTree</h1>
-            <div style={{ display: 'flex' }}>
-                <DefaultTree />
-                <p
-                    style={{
-                        marginLeft: 12,
-                        marginBottom: 0,
-                        padding: 10,
-                        flex: 1,
-                        background: '#fff',
-                    }}
-                >
-                    Content
-                </p>
-            </div>
-            <Divider />
+            <DefaultTree />
+        </div>
+    );
+};
+```
 
+```jsx
+import React from 'react';
+import { Divider, Row, Col } from 'antd';
+
+import { SmallTree } from './demos/tree/SmallTree';
+
+export default () => {
+    return (
+        <div style={{ background: '#eee', padding: 20 }}>
             <h1>SmallTree</h1>
-            <div style={{ display: 'flex' }}>
-                <SmallTree />
-                <p
-                    style={{
-                        marginLeft: 12,
-                        marginBottom: 0,
-                        padding: 10,
-                        flex: 1,
-                        background: '#fff',
-                    }}
-                >
-                    Content
-                </p>
-            </div>
-            <Divider />
+            <SmallTree />
+        </div>
+    );
+};
+```
 
+```jsx
+import React from 'react';
+import { Divider, Row, Col } from 'antd';
+
+import { NoHeaderTree } from './demos/tree/NoHeaderTree';
+
+export default () => {
+    return (
+        <div style={{ background: '#eee', padding: 20 }}>
             <h1>NoHeaderTree - 无 Header 的 CatalogueTree 组件</h1>
-            <div style={{ display: 'flex' }}>
-                <NoHeaderTree />
-                <p
-                    style={{
-                        marginLeft: 12,
-                        marginBottom: 0,
-                        padding: 10,
-                        flex: 1,
-                        background: '#fff',
-                    }}
-                >
-                    Content
-                </p>
-            </div>
-            <Divider />
+            <NoHeaderTree />
+        </div>
+    );
+};
+```
 
+```jsx
+import React from 'react';
+import { Divider, Row, Col } from 'antd';
+
+import { WithBtnSlotTree } from './demos/tree/WithBtnSlotTree';
+
+export default () => {
+    return (
+        <div style={{ background: '#eee', padding: 20 }}>
             <h1>WithBtnSlotTree</h1>
-            <div style={{ display: 'flex' }}>
-                <WithBtnSlotTree />
-                <p
-                    style={{
-                        marginLeft: 12,
-                        marginBottom: 0,
-                        padding: 10,
-                        flex: 1,
-                        background: '#fff',
-                    }}
-                >
-                    Content
-                </p>
-            </div>
-            <Divider />
+            <WithBtnSlotTree />
+        </div>
+    );
+};
+```
 
+```jsx
+import React from 'react';
+import { Divider, Row, Col } from 'antd';
+
+import { WithTabsTree } from './demos/tree/WithTabsTree';
+
+export default () => {
+    return (
+        <div style={{ background: '#eee', padding: 20 }}>
             <h1>WithTabsTree</h1>
-            <div style={{ display: 'flex' }}>
-                <WithTabsTree />
-                <p
-                    style={{
-                        marginLeft: 12,
-                        marginBottom: 0,
-                        padding: 10,
-                        flex: 1,
-                        background: '#fff',
-                    }}
-                >
-                    Content
-                </p>
-            </div>
-            <Divider />
+            <WithTabsTree />
+        </div>
+    );
+};
+```
 
+```jsx
+import React from 'react';
+import { Divider, Row, Col } from 'antd';
+
+import { WithCheckboxTree } from './demos/tree/WithCheckboxTree';
+
+export default () => {
+    return (
+        <div style={{ background: '#eee', padding: 20 }}>
             <h1>WithCheckboxTree</h1>
-            <div style={{ display: 'flex' }}>
-                <WithCheckboxTree />
-                <p
-                    style={{
-                        marginLeft: 12,
-                        marginBottom: 0,
-                        padding: 10,
-                        flex: 1,
-                        background: '#fff',
-                    }}
-                >
-                    Content
-                </p>
-            </div>
-            <Divider />
+            <WithCheckboxTree />
+        </div>
+    );
+};
+```
 
+### Catalogue.TreeSelect
+
+```jsx
+import React from 'react';
+import { Divider, Row, Col } from 'antd';
+
+import { NormalTreeSelect } from './demos/treeSelect/NormalTreeSelect';
+
+export default () => {
+    return (
+        <div style={{ background: '#eee', padding: 20 }}>
             <h1>NormalTreeSelect</h1>
-            <div style={{ display: 'flex' }}>
-                <NormalTreeSelect />
-                <p
-                    style={{
-                        marginLeft: 12,
-                        marginBottom: 0,
-                        padding: 10,
-                        flex: 1,
-                        background: '#fff',
-                    }}
-                >
-                    Content
-                </p>
-            </div>
-            <Divider />
+            <NormalTreeSelect />
         </div>
     );
 };
@@ -158,17 +134,19 @@ export default () => {
 
 ### Catalog.Tree
 
-| 参数             | 说明                                                                                   | 类型                                  | 默认值   |
-| ---------------- | -------------------------------------------------------------------------------------- | ------------------------------------- | -------- |
-| loading          | 是否加载中                                                                             | `boolean`                             | `false`  |
-| showHeader       | 是否展示头部组件                                                                       | `boolean`                             | `true`   |
-| treeTit          | 头部文案                                                                               | `React.ReactNode`                     | -        |
-| wrapperClassName | 容器类名                                                                               | `string`                              | -        |
-| wrapperStyle     | 容器行内样式                                                                           | `React.CSSProperties`                 | -        |
-| size             | 尺寸大小，small 每一个 item 高度是 24px，middle 每一个 item 高度是 36px，默认为 middle | `small \| middle`                     | `middle` |
-| onSearch         | 点击搜索按钮回调                                                                       | `(value: string, e) => void`          | -        |
-| tabsProps        | tabs 配置                                                                              | `TabsProps & { items: ITabsItem[]; }` | -        |
-| treeData         | `数据源，与 TreeProps['treeData'] 类型相似，只是增加了 ContextMenu 配置`               | `ISuperTreeDataItem[]`                | -        |
+| 参数             | 说明                                                                                   | 类型                                  | 默认值             |
+| ---------------- | -------------------------------------------------------------------------------------- | ------------------------------------- | ------------------ |
+| loading          | 是否加载中                                                                             | `boolean`                             | `false`            |
+| showHeader       | 是否展示头部组件                                                                       | `boolean`                             | `true`             |
+| treeTit          | 头部文案                                                                               | `React.ReactNode`                     | -                  |
+| wrapperClassName | 容器类名                                                                               | `string`                              | -                  |
+| wrapperStyle     | 容器行内样式                                                                           | `React.CSSProperties`                 | -                  |
+| size             | 尺寸大小，small 每一个 item 高度是 24px，middle 每一个 item 高度是 36px，默认为 middle | `small \| middle`                     | `middle`           |
+| onSearch         | 点击搜索按钮回调                                                                       | `(value: string, e) => void`          | -                  |
+| tabsProps        | tabs 配置                                                                              | `TabsProps & { items: ITabsItem[]; }` | -                  |
+| treeData         | `数据源，与 TreeProps['treeData'] 类型相似，只是增加了 ContextMenu 配置`               | `IDtTreeDataItem[]`                   | -                  |
+| defaultStatus    | `默认展示 tabs 还是 search，仅 items 有值时生效`                                       | `ITabsStatus`                         | `ITabsStatus.tabs` |
+| onStatusChange   | `tabs or status 变化时的回调`                                                          | `(status: ITabsStatus, e) => void`    | -                  |
 
 其余属性均继承自 `Tree` 组件，参考 <a href="https://4x.ant.design/components/tree-cn/#API" target="_blank">Tree API</a>
 
